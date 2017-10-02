@@ -1,7 +1,7 @@
 # Class spacewalk_repo::params
 # ===========================
 #
-# Default values for spacewalk module 
+# Default values for spacewalk module
 #
 class spacewalk::params {
 
@@ -26,6 +26,11 @@ class spacewalk::params {
       $ca_country_code             = 'GB'
       $enable_tftp                 = false # TFTP Support
 
+      # Proxy
+      $ca_chain                    = '/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT'
+      $force_own_ca_opt            = true
+      $ssl_password                = 'certpass'
+      $populate_config_channel     = 'Y'
     }
     default: {
       fail("Operatingsystem ${::operatingsystem} not supported")
